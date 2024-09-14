@@ -392,7 +392,8 @@ def submit_data_KAN(datafra, iter, horizon, rarety, inp):
         # Create distplot with custom bin_size
         st.session_state.fig = px.line(dpred, x='unique_id', y=['real', 'pred'], labels={'value': 'Y values', 'x': 'X values'})
         print(dpred)
-    except:
+    except Exception as ex:
+        print(ex)
         st.warning('Надано не коректні гіперпараметри', icon="⚠️")
 @st.cache_data(show_spinner="Робимо передбачення...")
 def submit_data_TN(datafra, iter, horizon, rarety, inp):
