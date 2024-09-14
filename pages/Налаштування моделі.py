@@ -4,6 +4,7 @@ from neuralforecast.models import KAN, TimeLLM, TimesNet, NBEATSx, TimeMixer, Pa
 from neuralforecast import NeuralForecast
 import plotly.figure_factory as ff
 import plotly.express as px
+from sklearn.metrics import mean_squared_error
 
 st.set_page_config(
     page_title="Модель",
