@@ -595,7 +595,8 @@ if __name__ == "__main__":
 
                 st.button(label="Підтвердити", key="kan", on_click=submit_data_KAN,
                           args=(ds_for_pred, iter, horizon, means[fr], inp))
-        except:
+        except Exception as ex:
+            print(ex)
             st.warning('Надано не коректні гіперпараметри', icon="⚠️")
 
         try:
