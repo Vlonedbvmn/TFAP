@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
+import os
 
+os.environ['NIXTLA_ID_AS_COL'] = '1'
 
 # Directory of the pages
 
