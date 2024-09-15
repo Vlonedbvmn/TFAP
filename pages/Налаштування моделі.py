@@ -99,6 +99,17 @@ if 'date_not_n' not in st.session_state:
 
 @st.cache_data(show_spinner="Робимо передбачення...")
 def submit_data_auto(datafra, iter, horizon, rarety):
+    if st.session_state.date_not_n:
+        start_date = pd.to_datetime('2024-01-01')
+        datafra['ds'] = start_date + pd.to_timedelta(datafra['ds'] - 1, rarety)
+
+    datafra['ds'] = pd.to_datetime(datafra['ds'])
+    datafra = datafra.set_index('ds').asfreq(rarety)
+    datafra = datafra.reset_index()
+    datafra['y'] = datafra['y'].interpolate()
+    datafra["unique_id"] = [0 for i in range(1, len(datafra) + 1)]
+    print("s;kgfoshdisdifsdf")
+    print(datafra)
     try:
         st.session_state.horiz = horizon
         q = int(round(len(datafra) * 0.01, 0))
@@ -412,6 +423,17 @@ def submit_data_KAN(datafra, iter, horizon, rarety, inp):
         st.warning('Надано не коректні гіперпараметри', icon="⚠️")
 @st.cache_data(show_spinner="Робимо передбачення...")
 def submit_data_TN(datafra, iter, horizon, rarety, inp):
+    if st.session_state.date_not_n:
+        start_date = pd.to_datetime('2024-01-01')
+        datafra['ds'] = start_date + pd.to_timedelta(datafra['ds'] - 1, rarety)
+
+    datafra['ds'] = pd.to_datetime(datafra['ds'])
+    datafra = datafra.set_index('ds').asfreq(rarety)
+    datafra = datafra.reset_index()
+    datafra['y'] = datafra['y'].interpolate()
+    datafra["unique_id"] = [0 for i in range(1, len(datafra) + 1)]
+    print("s;kgfoshdisdifsdf")
+    print(datafra)
     try:
         st.session_state.horiz = horizon
         q = int(round(len(datafra) * 0.1, 0))
@@ -452,6 +474,17 @@ def submit_data_TN(datafra, iter, horizon, rarety, inp):
         st.warning('Надано не коректні гіперпараметри', icon="⚠️")
 @st.cache_data(show_spinner="Робимо передбачення...")
 def submit_data_TM(datafra, iter, horizon, rarety, inp):
+    if st.session_state.date_not_n:
+        start_date = pd.to_datetime('2024-01-01')
+        datafra['ds'] = start_date + pd.to_timedelta(datafra['ds'] - 1, rarety)
+
+    datafra['ds'] = pd.to_datetime(datafra['ds'])
+    datafra = datafra.set_index('ds').asfreq(rarety)
+    datafra = datafra.reset_index()
+    datafra['y'] = datafra['y'].interpolate()
+    datafra["unique_id"] = [0 for i in range(1, len(datafra) + 1)]
+    print("s;kgfoshdisdifsdf")
+    print(datafra)
     try:
         st.session_state.horiz = horizon
         q = int(round(len(datafra) * 0.1, 0))
@@ -493,6 +526,17 @@ def submit_data_TM(datafra, iter, horizon, rarety, inp):
         st.warning('Надано не коректні гіперпараметри', icon="⚠️")
 @st.cache_data(show_spinner="Робимо передбачення...")
 def submit_data_PTST(datafra, iter, horizon, rarety, inp):
+    if st.session_state.date_not_n:
+        start_date = pd.to_datetime('2024-01-01')
+        datafra['ds'] = start_date + pd.to_timedelta(datafra['ds'] - 1, rarety)
+
+    datafra['ds'] = pd.to_datetime(datafra['ds'])
+    datafra = datafra.set_index('ds').asfreq(rarety)
+    datafra = datafra.reset_index()
+    datafra['y'] = datafra['y'].interpolate()
+    datafra["unique_id"] = [0 for i in range(1, len(datafra) + 1)]
+    print("s;kgfoshdisdifsdf")
+    print(datafra)
     try:
         st.session_state.horiz = horizon
         q = int(round(len(datafra) * 0.1, 0))
@@ -533,6 +577,17 @@ def submit_data_PTST(datafra, iter, horizon, rarety, inp):
         st.warning('Надано не коректні гіперпараметри', icon="⚠️")
 @st.cache_data(show_spinner="Робимо передбачення...")
 def submit_data_NBx(datafra, iter, horizon, rarety, inp):
+    if st.session_state.date_not_n:
+        start_date = pd.to_datetime('2024-01-01')
+        datafra['ds'] = start_date + pd.to_timedelta(datafra['ds'] - 1, rarety)
+
+    datafra['ds'] = pd.to_datetime(datafra['ds'])
+    datafra = datafra.set_index('ds').asfreq(rarety)
+    datafra = datafra.reset_index()
+    datafra['y'] = datafra['y'].interpolate()
+    datafra["unique_id"] = [0 for i in range(1, len(datafra) + 1)]
+    print("s;kgfoshdisdifsdf")
+    print(datafra)
     try:
         st.session_state.horiz = horizon
         q = int(round(len(datafra) * 0.1, 0))
