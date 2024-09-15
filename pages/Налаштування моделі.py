@@ -110,7 +110,7 @@ def submit_data_auto(datafra, iter, horizon, rarety):
     datafra["unique_id"] = [0 for i in range(1, len(datafra) + 1)]
     print("s;kgfoshdisdifsdf")
     print(datafra)
-    st.session_state.df_forpred = ds_for_pred
+    st.session_state.df_forpred = datafra
     try:
         st.session_state.horiz = horizon
         q = int(round(len(datafra) * 0.01, 0))
@@ -382,7 +382,7 @@ def submit_data_KAN(datafra, iter, horizon, rarety, inp):
     datafra["unique_id"] = [0 for i in range(1, len(datafra) + 1)]
     print("s;kgfoshdisdifsdf")
     print(datafra)
-    st.session_state.df_forpred = ds_for_pred
+    st.session_state.df_forpred = datafra
     try:
         st.session_state.horiz = horizon
         q = int(round(len(datafra) * 0.01, 0))
@@ -435,7 +435,7 @@ def submit_data_TN(datafra, iter, horizon, rarety, inp):
     datafra["unique_id"] = [0 for i in range(1, len(datafra) + 1)]
     print("s;kgfoshdisdifsdf")
     print(datafra)
-    st.session_state.df_forpred = ds_for_pred
+    st.session_state.df_forpred = datafra
     try:
         st.session_state.horiz = horizon
         q = int(round(len(datafra) * 0.1, 0))
@@ -487,7 +487,7 @@ def submit_data_TM(datafra, iter, horizon, rarety, inp):
     datafra["unique_id"] = [0 for i in range(1, len(datafra) + 1)]
     print("s;kgfoshdisdifsdf")
     print(datafra)
-    st.session_state.df_forpred = ds_for_pred
+    st.session_state.df_forpred = datafra
     try:
         st.session_state.horiz = horizon
         q = int(round(len(datafra) * 0.1, 0))
@@ -540,7 +540,7 @@ def submit_data_PTST(datafra, iter, horizon, rarety, inp):
     datafra["unique_id"] = [0 for i in range(1, len(datafra) + 1)]
     print("s;kgfoshdisdifsdf")
     print(datafra)
-    st.session_state.df_forpred = ds_for_pred
+    st.session_state.df_forpred = datafra
     try:
         st.session_state.horiz = horizon
         q = int(round(len(datafra) * 0.1, 0))
@@ -592,7 +592,7 @@ def submit_data_NBx(datafra, iter, horizon, rarety, inp):
     datafra["unique_id"] = [0 for i in range(1, len(datafra) + 1)]
     print("s;kgfoshdisdifsdf")
     print(datafra)
-    st.session_state.df_forpred = ds_for_pred
+    st.session_state.df_forpred = datafra
     try:
         st.session_state.horiz = horizon
         q = int(round(len(datafra) * 0.1, 0))
