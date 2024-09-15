@@ -126,7 +126,7 @@ if __name__ == "__main__":
 
     # If experimental data button is clicked, show additional options
     if st.session_state.clicked:
-        st.markdown("## Ви обрали тестувальні дані. Це тестові набори даних, за допомогою яких ви можете ознайомитись з функціоналом проєкту та зрозуміти, яка модель підійде найкраще.")
+        st.markdown("### Ви обрали тестувальні дані. Це тестові набори даних, за допомогою яких ви можете ознайомитись з функціоналом проєкту та зрозуміти, яка модель підійде найкраще.")
         st.write("Оберіть тестовий набір даних:")
         st.markdown('<div class="data-button-container">', unsafe_allow_html=True)
         c1, c2, c3 = st.columns(3)
@@ -163,6 +163,9 @@ if __name__ == "__main__":
 
     # If own data button is clicked, allow file upload
     if st.session_state.clicked2:
+        st.markdown("### Ви обрали свої дані. Наразі основні вимоги до даних це:")
+        st.markdown("### • Завжди повинні бути 2 колонки: час та значення, які будуть прогнозуватися")
+        st.markdown("### • ")
         uploaded_file = st.file_uploader("Оберіть файл (Підтриуються формати .csv та .xlsx)", type=["csv", "xlsx"])
         if uploaded_file is not None:
             if uploaded_file.name[-4:] == "xlsx":
@@ -185,7 +188,7 @@ if __name__ == "__main__":
 
     # After submission, show the dataframe and success message
     if st.session_state.submitted:
-        st.success(f"Дані датасету {st.session_state.name} успішно завантажені!")
+        st.success(f"Дані датасету {st.session_state.name} успішно завантажені! Тепер можете перейти до розділу 'Налаштування моделі'")
 
     st.divider()
     if st.session_state.name is not None:
