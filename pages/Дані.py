@@ -167,7 +167,8 @@ if __name__ == "__main__":
     if st.session_state.clicked2:
         st.markdown("### Ви обрали свої дані. Наразі основні вимоги до даних це:")
         st.markdown("### • Завжди повинні бути 2 колонки: час та значення, які будуть прогнозуватися")
-        st.markdown("### • ")
+        st.markdown("### • Бажано офрмити колонки з часом під формат timestamp, date, або datetime")
+        st.markdown("### • Бажано, щоб було не було пропусків між записами значень, бо пропуски будуть заміщуватися, а отже якість прогнозування може падати")
         uploaded_file = st.file_uploader("Оберіть файл (Підтриуються формати .csv та .xlsx)", type=["csv", "xlsx"])
         if uploaded_file is not None:
             if uploaded_file.name[-4:] == "xlsx":
