@@ -670,17 +670,17 @@ if __name__ == "__main__":
                 st.markdown("### KAN — це нейронна мережа, що застосовує апроксимаційну теорему Колмогорова-Арнольда, яка стверджує, що сплайни можуть апроксимувати складніші функції.")
                 st.divider()
                 horizon = st.select_slider(
-                    "Оберіть горизонт передбачення:",
-                    options=[i for i in range(1, int(round(len(ds_for_pred)*0.05, 0)))]
+                    "Оберіть горизонт передбачення (на скільки вперед буде проводитись передбачення):",
+                    options=[i for i in range(1, 151)]
                 )
                 iter = st.select_slider(
-                    "Оберіть к-ть ітерацій начання моделі:",
+                    "Оберіть к-ть ітерацій начання моделі (чим більше, тим довше та точніше):",
                     options=[i for i in range(5,101)]
                 )
                 fr = st.selectbox("Оберіть частоту запису даних в ряді:",
                                      ["Місяць", "День", "Рік", "Хвилина", "Секунда", "Година"])
 
-                inp = st.number_input("Оберіть к-ть попередніх значень з ряду для кроку прогнозу:", step=1)
+                inp = st.number_input("Оберіть к-ть попередніх значень з ряду для кроку прогнозу:", step=1, min_value=5, max_value=150)
 
                 st.button(label="Підтвердити", key="kan", on_click=submit_data_KAN,
                           args=(ds_for_pred, iter, horizon, means[fr], inp))
@@ -695,17 +695,17 @@ if __name__ == "__main__":
                     "### NBEATSx — це глибока нейронна архітектура на основі MLP, яка використовує прямі та зворотні залишкові зв'язки.")
                 st.divider()
                 horizon = st.select_slider(
-                    "Оберіть горизонт передбачення:",
-                    options=[i for i in range(1, int(round(len(ds_for_pred)*0.05, 0)))]
+                    "Оберіть горизонт передбачення (на скільки вперед буде проводитись передбачення):",
+                    options=[i for i in range(1, 151)]
                 )
                 iter = st.select_slider(
-                    "Оберіть к-ть ітерацій начання моделі:",
+                    "Оберіть к-ть ітерацій начання моделі (чим більше, тим довше та точніше):",
                     options=[i for i in range(5, 101)]
                 )
                 fr = st.selectbox("Оберіть частоту запису даних в ряді:",
                                   ["Місяць", "День", "Рік", "Хвилина", "Секунда", "Година"])
 
-                inp = st.number_input("Оберіть к-ть попередніх значень з ряду для кроку прогнозу:", step=1)
+                inp = st.number_input("Оберіть к-ть попередніх значень з ряду для кроку прогнозу:", step=1, min_value=5, max_value=150)
                 st.button(label="Підтвердити", key="kan", on_click=submit_data_NBx,
                           args=(ds_for_pred, iter, horizon, means[fr], inp))
         except:
@@ -717,16 +717,16 @@ if __name__ == "__main__":
                 st.markdown("### TimesNet — це модель на основі CNN, яка ефективно вирішує завдання моделювання як внутрішньоперіодних, так і міжперіодних змін у часових рядах.")
                 st.divider()
                 horizon = st.select_slider(
-                    "Оберіть горизонт передбачення:",
-                    options=[i for i in range(1, int(round(len(ds_for_pred)*0.05, 0)))]
+                    "Оберіть горизонт передбачення (на скільки вперед буде проводитись передбачення):",
+                    options=[i for i in range(1, 151)]
                 )
                 iter = st.select_slider(
-                    "Оберіть к-ть ітерацій начання моделі:",
+                    "Оберіть к-ть ітерацій начання моделі (чим більше, тим довше та точніше):",
                     options=[i for i in range(5, 101)]
                 )
                 fr = st.selectbox("Оберіть частоту запису даних в ряді:",
                                   ["Місяць", "День", "Рік", "Хвилина", "Секунда", "Година"])
-                inp = st.number_input("Оберіть к-ть попередніх значень з ряду для кроку прогнозу:", step=1)
+                inp = st.number_input("Оберіть к-ть попередніх значень з ряду для кроку прогнозу:", step=1, min_value=5, max_value=150)
                 st.button(label="Підтвердити", key="kan", on_click=submit_data_TN,
                           args=(ds_for_pred, iter, horizon, means[fr], inp))
         except:
@@ -738,16 +738,16 @@ if __name__ == "__main__":
                     "### TimeMixer - модель, яка поєднує елементи архітектури Transformers і CNN для досягнення високої точності в прогнозах, обробляючи залежності як в просторі, так і в часі.")
                 st.divider()
                 horizon = st.select_slider(
-                    "Оберіть горизонт передбачення:",
-                    options=[i for i in range(1, int(round(len(ds_for_pred)*0.05, 0)))]
+                    "Оберіть горизонт передбачення (на скільки вперед буде проводитись передбачення):",
+                    options=[i for i in range(1, 151)]
                 )
                 iter = st.select_slider(
-                    "Оберіть к-ть ітерацій начання моделі:",
+                    "Оберіть к-ть ітерацій начання моделі (чим більше, тим довше та точніше):",
                     options=[i for i in range(5, 101)]
                 )
                 fr = st.selectbox("Оберіть частоту запису даних в ряді:",
                                   ["Місяць", "День", "Рік", "Хвилина", "Секунда", "Година"])
-                inp = st.number_input("Оберіть к-ть попередніх значень з ряду для кроку прогнозу:", step=1)
+                inp = st.number_input("Оберіть к-ть попередніх значень з ряду для кроку прогнозу:", step=1, min_value=5, max_value=150)
                 st.button(label="Підтвердити", key="kan", on_click=submit_data_TM,
                           args=(ds_for_pred, iter, horizon, means[fr], inp))
         except:
@@ -759,16 +759,16 @@ if __name__ == "__main__":
                     "### PatchTST — це високоефективна модель на основі Transformer, призначена для багатовимірного прогнозування часових рядів.")
                 st.divider()
                 horizon = st.select_slider(
-                    "Оберіть горизонт передбачення:",
-                    options=[i for i in range(1, int(round(len(ds_for_pred)*0.05, 0)))]
+                    "Оберіть горизонт передбачення (на скільки вперед буде проводитись передбачення):",
+                    options=[i for i in range(1, 151)]
                 )
                 iter = st.select_slider(
-                    "Оберіть к-ть ітерацій начання моделі:",
+                    "Оберіть к-ть ітерацій начання моделі (чим більше, тим довше та точніше):",
                     options=[i for i in range(5, 101)]
                 )
                 fr = st.selectbox("Оберіть частоту запису даних в ряді:",
                                   ["Місяць", "День", "Рік", "Хвилина", "Секунда", "Година"])
-                inp = st.number_input("Оберіть к-ть попередніх значень з ряду для кроку прогнозу:", step=1)
+                inp = st.number_input("Оберіть к-ть попередніх значень з ряду для кроку прогнозу:", step=1, min_value=5, max_value=150)
                 st.button(label="Підтвердити", key="kan", on_click=submit_data_PTST,
                           args=(ds_for_pred, iter, horizon, means[fr], inp))
         except:
@@ -777,11 +777,11 @@ if __name__ == "__main__":
             if model == "Авто-вибір":
                 st.divider()
                 horizon = st.select_slider(
-                    "Оберіть число кількості часових величин, яке найблище до числа часових величин на які ви хочете робити передбачення:",
-                    options=[i for i in range(1, int(round(len(ds_for_pred)*0.05, 0)))]
+                    "Оберіть горизонт передбачення (на скільки вперед буде проводитись передбачення):",
+                    options=[i for i in range(1, 151)]
                 )
                 iter = st.select_slider(
-                    "Оберіть к-ть ітерацій начання моделі (чим більше, тим довше):",
+                    "Оберіть к-ть ітерацій начання моделі (чим більше, тим довше та точніше):",
                     options=[i for i in range(5, 101)]
                 )
                 fr = st.selectbox("Оберіть частоту запису даних в ряді:",
