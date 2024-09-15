@@ -364,10 +364,10 @@ def submit_data_KAN(datafra, iter, horizon, rarety, inp):
         datafra['ds'] = start_date + pd.to_timedelta(datafra['ds'] - 1, rarety)
 
     datafra['ds'] = pd.to_datetime(datafra['ds'])
-    datafra['y'] = datafra['y'].interpolate()
     datafra = datafra.set_index('ds').asfreq(rarety)
     datafra = datafra.reset_index()
-
+    datafra['y'] = datafra['y'].interpolate()
+    datafra["unique_id"] = [0 for i in range(1, len(datafra) + 1)]
     print("s;kgfoshdisdifsdf")
     print(datafra)
         
