@@ -705,7 +705,7 @@ if __name__ == "__main__":
                 fr = st.selectbox("Оберіть частоту запису даних в ряді:",
                                   ["Місяць", "День", "Рік", "Хвилина", "Секунда", "Година"])
 
-                inp = st.number_input("Оберіть к-ть попередніх значень з ряду для кроку прогнозу:")
+                inp = st.number_input("Оберіть к-ть попередніх значень з ряду для кроку прогнозу:", step=1)
                 st.button(label="Підтвердити", key="kan", on_click=submit_data_NBx,
                           args=(ds_for_pred, iter, horizon, means[fr], inp))
         except:
@@ -726,7 +726,7 @@ if __name__ == "__main__":
                 )
                 fr = st.selectbox("Оберіть частоту запису даних в ряді:",
                                   ["Місяць", "День", "Рік", "Хвилина", "Секунда", "Година"])
-                inp = st.number_input("Оберіть к-ть попередніх значень з ряду для кроку прогнозу:")
+                inp = st.number_input("Оберіть к-ть попередніх значень з ряду для кроку прогнозу:", step=1)
                 st.button(label="Підтвердити", key="kan", on_click=submit_data_TN,
                           args=(ds_for_pred, iter, horizon, means[fr], inp))
         except:
@@ -747,7 +747,7 @@ if __name__ == "__main__":
                 )
                 fr = st.selectbox("Оберіть частоту запису даних в ряді:",
                                   ["Місяць", "День", "Рік", "Хвилина", "Секунда", "Година"])
-                inp = st.number_input("Оберіть к-ть попередніх значень з ряду для кроку прогнозу:")
+                inp = st.number_input("Оберіть к-ть попередніх значень з ряду для кроку прогнозу:", step=1)
                 st.button(label="Підтвердити", key="kan", on_click=submit_data_TM,
                           args=(ds_for_pred, iter, horizon, means[fr], inp))
         except:
@@ -768,7 +768,7 @@ if __name__ == "__main__":
                 )
                 fr = st.selectbox("Оберіть частоту запису даних в ряді:",
                                   ["Місяць", "День", "Рік", "Хвилина", "Секунда", "Година"])
-                inp = st.number_input("Оберіть к-ть попередніх значень з ряду для кроку прогнозу:")
+                inp = st.number_input("Оберіть к-ть попередніх значень з ряду для кроку прогнозу:", step=1)
                 st.button(label="Підтвердити", key="kan", on_click=submit_data_PTST,
                           args=(ds_for_pred, iter, horizon, means[fr], inp))
         except:
