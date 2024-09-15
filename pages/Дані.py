@@ -126,7 +126,8 @@ if __name__ == "__main__":
 
     # If experimental data button is clicked, show additional options
     if st.session_state.clicked:
-        st.write("Ви обрали тестувальні дані. Це тестові набори даних, за допомогою яких ви можете ознайомитись з функціоналом проєкту та зрозуміти, яка модель підійде найкраще. Оберіть тестовий набір даних:")
+        st.markdown("## Ви обрали тестувальні дані. Це тестові набори даних, за допомогою яких ви можете ознайомитись з функціоналом проєкту та зрозуміти, яка модель підійде найкраще.")
+        st.write("Оберіть тестовий набір даних:")
         st.markdown('<div class="data-button-container">', unsafe_allow_html=True)
         c1, c2, c3 = st.columns(3)
         with c1:
