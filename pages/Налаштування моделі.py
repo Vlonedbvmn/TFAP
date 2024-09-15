@@ -671,7 +671,7 @@ if __name__ == "__main__":
                 st.divider()
                 horizon = st.select_slider(
                     "Оберіть горизонт передбачення:",
-                    options=[i for i in range(1, int(round(len(ds_for_pred)*0.1, 0)))]
+                    options=[i for i in range(1, int(round(len(ds_for_pred)*0.05, 0)))]
                 )
                 iter = st.select_slider(
                     "Оберіть к-ть ітерацій начання моделі:",
@@ -696,7 +696,7 @@ if __name__ == "__main__":
                 st.divider()
                 horizon = st.select_slider(
                     "Оберіть горизонт передбачення:",
-                    options=[i for i in range(1, int(round(len(ds_for_pred)*0.1, 0)))]
+                    options=[i for i in range(1, int(round(len(ds_for_pred)*0.05, 0)))]
                 )
                 iter = st.select_slider(
                     "Оберіть к-ть ітерацій начання моделі:",
@@ -718,7 +718,7 @@ if __name__ == "__main__":
                 st.divider()
                 horizon = st.select_slider(
                     "Оберіть горизонт передбачення:",
-                    options=[i for i in range(1, int(round(len(ds_for_pred)*0.1, 0)))]
+                    options=[i for i in range(1, int(round(len(ds_for_pred)*0.05, 0)))]
                 )
                 iter = st.select_slider(
                     "Оберіть к-ть ітерацій начання моделі:",
@@ -739,7 +739,7 @@ if __name__ == "__main__":
                 st.divider()
                 horizon = st.select_slider(
                     "Оберіть горизонт передбачення:",
-                    options=[i for i in range(1, int(round(len(ds_for_pred)*0.1, 0)))]
+                    options=[i for i in range(1, int(round(len(ds_for_pred)*0.05, 0)))]
                 )
                 iter = st.select_slider(
                     "Оберіть к-ть ітерацій начання моделі:",
@@ -760,7 +760,7 @@ if __name__ == "__main__":
                 st.divider()
                 horizon = st.select_slider(
                     "Оберіть горизонт передбачення:",
-                    options=[i for i in range(1, int(round(len(ds_for_pred)*0.1, 0)))]
+                    options=[i for i in range(1, int(round(len(ds_for_pred)*0.05, 0)))]
                 )
                 iter = st.select_slider(
                     "Оберіть к-ть ітерацій начання моделі:",
@@ -778,7 +778,7 @@ if __name__ == "__main__":
                 st.divider()
                 horizon = st.select_slider(
                     "Оберіть число кількості часових величин, яке найблище до числа часових величин на які ви хочете робити передбачення:",
-                    options=[i for i in range(1, int(round(len(ds_for_pred)*0.1, 0)))]
+                    options=[i for i in range(1, int(round(len(ds_for_pred)*0.05, 0)))]
                 )
                 iter = st.select_slider(
                     "Оберіть к-ть ітерацій начання моделі (чим більше, тим довше):",
