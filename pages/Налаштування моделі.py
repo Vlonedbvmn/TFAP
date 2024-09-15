@@ -32,6 +32,8 @@ if 'df_forpred' not in st.session_state:
     st.session_state.df_forpred = None
 if 'horiz' not in st.session_state:
     st.session_state.horiz = None
+if 'date_not_n' not in st.session_state:
+    st.session_state.date_not_n = None
 # @st.cache_data(show_spinner="Loading data...")
 # def load_data():
 #     wine_data = load_wine()
@@ -357,6 +359,15 @@ def submit_data_auto(datafra, iter, horizon, rarety):
 
 @st.cache_data(show_spinner="Робимо передбачення...")
 def submit_data_KAN(datafra, iter, horizon, rarety, inp):
+    if st.st.session_state.date_not_n:
+        start_date = pd.to_datetime('2024-01-01')
+        datafra['ds'] = start_date + pd.to_timedelta(datafra['ds'] - 1, rarety)
+
+    datafra = datafra.set_index('ds').asfreq(rarety)    
+    datafra = datafra.reset_index()
+    print("s;kgfoshdisdifsdf")
+    print(datafra)
+        
     try:
         st.session_state.horiz = horizon
         q = int(round(len(datafra) * 0.01, 0))
@@ -563,9 +574,14 @@ if __name__ == "__main__":
 
     if st.session_state.df is not None:
         ds_for_pred = pd.DataFrame()
-        ds_for_pred["ds"] = st.session_state.df[st.session_state.date]
-        ds_for_pred['ds'] = pd.to_datetime(ds_for_pred['ds'])
         ds_for_pred["y"] = st.session_state.df[st.session_state.target]
+        try:
+            ds_for_pred["ds"] = st.session_state.df[st.session_state.date]
+            st.session_state.date_not_n = False
+        except:
+            st.session_state.date_not_n = True
+            ds_for_pred['ds'] = [i for i in range(1, len(ds_for_pred)+1)]
+
         ds_for_pred["unique_id"] = [0 for i in range(1, len(ds_for_pred)+1)]
 
         print(ds_for_pred)
