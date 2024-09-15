@@ -99,17 +99,18 @@ if 'date_not_n' not in st.session_state:
 
 @st.cache_data(show_spinner="Робимо передбачення...")
 def submit_data_auto(datafra, iter, horizon, rarety):
-    # if st.session_state.date_not_n:
-    #     start_date = pd.to_datetime('2024-01-01')
-    #     datafra['ds'] = start_date + pd.to_timedelta(datafra['ds'] - 1, rarety)
+    if st.session_state.date_not_n:
+        start_date = pd.to_datetime('2024-01-01')
+        datafra['ds'] = start_date + pd.to_timedelta(datafra['ds'] - 1, rarety)
 
-    # datafra['ds'] = pd.to_datetime(datafra['ds'])
-    # datafra = datafra.set_index('ds').asfreq(rarety)
-    # datafra = datafra.reset_index()
-    # datafra['y'] = datafra['y'].interpolate()
-    # datafra["unique_id"] = [0 for i in range(1, len(datafra) + 1)]
-    # print("s;kgfoshdisdifsdf")
+    datafra['ds'] = pd.to_datetime(datafra['ds'])
+    datafra = datafra.set_index('ds').asfreq(rarety)
+    datafra = datafra.reset_index()
+    datafra['y'] = datafra['y'].interpolate()
+    datafra["unique_id"] = [0 for i in range(1, len(datafra) + 1)]
+    print("s;kgfoshdisdifsdf")
     print(datafra)
+    st.session_state.df_forpred = ds_for_pred
     try:
         st.session_state.horiz = horizon
         q = int(round(len(datafra) * 0.01, 0))
@@ -370,18 +371,18 @@ def submit_data_auto(datafra, iter, horizon, rarety):
 
 @st.cache_data(show_spinner="Робимо передбачення...")
 def submit_data_KAN(datafra, iter, horizon, rarety, inp):
-    # if st.session_state.date_not_n:
-    #     start_date = pd.to_datetime('2024-01-01')
-    #     datafra['ds'] = start_date + pd.to_timedelta(datafra['ds'] - 1, rarety)
+    if st.session_state.date_not_n:
+        start_date = pd.to_datetime('2024-01-01')
+        datafra['ds'] = start_date + pd.to_timedelta(datafra['ds'] - 1, rarety)
 
-    # datafra['ds'] = pd.to_datetime(datafra['ds'])
-    # datafra = datafra.set_index('ds').asfreq(rarety)
-    # datafra = datafra.reset_index()
-    # datafra['y'] = datafra['y'].interpolate()
-    # datafra["unique_id"] = [0 for i in range(1, len(datafra) + 1)]
-    # print("s;kgfoshdisdifsdf")
+    datafra['ds'] = pd.to_datetime(datafra['ds'])
+    datafra = datafra.set_index('ds').asfreq(rarety)
+    datafra = datafra.reset_index()
+    datafra['y'] = datafra['y'].interpolate()
+    datafra["unique_id"] = [0 for i in range(1, len(datafra) + 1)]
+    print("s;kgfoshdisdifsdf")
     print(datafra)
-        
+    st.session_state.df_forpred = ds_for_pred
     try:
         st.session_state.horiz = horizon
         q = int(round(len(datafra) * 0.01, 0))
@@ -423,17 +424,18 @@ def submit_data_KAN(datafra, iter, horizon, rarety, inp):
         st.warning('Надано не коректні гіперпараметри', icon="⚠️")
 @st.cache_data(show_spinner="Робимо передбачення...")
 def submit_data_TN(datafra, iter, horizon, rarety, inp):
-    # if st.session_state.date_not_n:
-    #     start_date = pd.to_datetime('2024-01-01')
-    #     datafra['ds'] = start_date + pd.to_timedelta(datafra['ds'] - 1, rarety)
+    if st.session_state.date_not_n:
+        start_date = pd.to_datetime('2024-01-01')
+        datafra['ds'] = start_date + pd.to_timedelta(datafra['ds'] - 1, rarety)
 
-    # datafra['ds'] = pd.to_datetime(datafra['ds'])
-    # datafra = datafra.set_index('ds').asfreq(rarety)
-    # datafra = datafra.reset_index()
-    # datafra['y'] = datafra['y'].interpolate()
-    # datafra["unique_id"] = [0 for i in range(1, len(datafra) + 1)]
-    # print("s;kgfoshdisdifsdf")
+    datafra['ds'] = pd.to_datetime(datafra['ds'])
+    datafra = datafra.set_index('ds').asfreq(rarety)
+    datafra = datafra.reset_index()
+    datafra['y'] = datafra['y'].interpolate()
+    datafra["unique_id"] = [0 for i in range(1, len(datafra) + 1)]
+    print("s;kgfoshdisdifsdf")
     print(datafra)
+    st.session_state.df_forpred = ds_for_pred
     try:
         st.session_state.horiz = horizon
         q = int(round(len(datafra) * 0.1, 0))
@@ -474,17 +476,18 @@ def submit_data_TN(datafra, iter, horizon, rarety, inp):
         st.warning('Надано не коректні гіперпараметри', icon="⚠️")
 @st.cache_data(show_spinner="Робимо передбачення...")
 def submit_data_TM(datafra, iter, horizon, rarety, inp):
-    # if st.session_state.date_not_n:
-    #     start_date = pd.to_datetime('2024-01-01')
-    #     datafra['ds'] = start_date + pd.to_timedelta(datafra['ds'] - 1, rarety)
+    if st.session_state.date_not_n:
+        start_date = pd.to_datetime('2024-01-01')
+        datafra['ds'] = start_date + pd.to_timedelta(datafra['ds'] - 1, rarety)
 
-    # datafra['ds'] = pd.to_datetime(datafra['ds'])
-    # datafra = datafra.set_index('ds').asfreq(rarety)
-    # datafra = datafra.reset_index()
-    # datafra['y'] = datafra['y'].interpolate()
-    # datafra["unique_id"] = [0 for i in range(1, len(datafra) + 1)]
-    # print("s;kgfoshdisdifsdf")
+    datafra['ds'] = pd.to_datetime(datafra['ds'])
+    datafra = datafra.set_index('ds').asfreq(rarety)
+    datafra = datafra.reset_index()
+    datafra['y'] = datafra['y'].interpolate()
+    datafra["unique_id"] = [0 for i in range(1, len(datafra) + 1)]
+    print("s;kgfoshdisdifsdf")
     print(datafra)
+    st.session_state.df_forpred = ds_for_pred
     try:
         st.session_state.horiz = horizon
         q = int(round(len(datafra) * 0.1, 0))
@@ -526,17 +529,18 @@ def submit_data_TM(datafra, iter, horizon, rarety, inp):
         st.warning('Надано не коректні гіперпараметри', icon="⚠️")
 @st.cache_data(show_spinner="Робимо передбачення...")
 def submit_data_PTST(datafra, iter, horizon, rarety, inp):
-    # if st.session_state.date_not_n:
-    #     start_date = pd.to_datetime('2024-01-01')
-    #     datafra['ds'] = start_date + pd.to_timedelta(datafra['ds'] - 1, rarety)
+    if st.session_state.date_not_n:
+        start_date = pd.to_datetime('2024-01-01')
+        datafra['ds'] = start_date + pd.to_timedelta(datafra['ds'] - 1, rarety)
 
-    # datafra['ds'] = pd.to_datetime(datafra['ds'])
-    # datafra = datafra.set_index('ds').asfreq(rarety)
-    # datafra = datafra.reset_index()
-    # datafra['y'] = datafra['y'].interpolate()
-    # datafra["unique_id"] = [0 for i in range(1, len(datafra) + 1)]
-    # print("s;kgfoshdisdifsdf")
+    datafra['ds'] = pd.to_datetime(datafra['ds'])
+    datafra = datafra.set_index('ds').asfreq(rarety)
+    datafra = datafra.reset_index()
+    datafra['y'] = datafra['y'].interpolate()
+    datafra["unique_id"] = [0 for i in range(1, len(datafra) + 1)]
+    print("s;kgfoshdisdifsdf")
     print(datafra)
+    st.session_state.df_forpred = ds_for_pred
     try:
         st.session_state.horiz = horizon
         q = int(round(len(datafra) * 0.1, 0))
@@ -577,17 +581,18 @@ def submit_data_PTST(datafra, iter, horizon, rarety, inp):
         st.warning('Надано не коректні гіперпараметри', icon="⚠️")
 @st.cache_data(show_spinner="Робимо передбачення...")
 def submit_data_NBx(datafra, iter, horizon, rarety, inp):
-    # if st.session_state.date_not_n:
-    #     start_date = pd.to_datetime('2024-01-01')
-    #     datafra['ds'] = start_date + pd.to_timedelta(datafra['ds'] - 1, rarety)
+    if st.session_state.date_not_n:
+        start_date = pd.to_datetime('2024-01-01')
+        datafra['ds'] = start_date + pd.to_timedelta(datafra['ds'] - 1, rarety)
 
-    # datafra['ds'] = pd.to_datetime(datafra['ds'])
-    # datafra = datafra.set_index('ds').asfreq(rarety)
-    # datafra = datafra.reset_index()
-    # datafra['y'] = datafra['y'].interpolate()
-    # datafra["unique_id"] = [0 for i in range(1, len(datafra) + 1)]
-    # print("s;kgfoshdisdifsdf")
+    datafra['ds'] = pd.to_datetime(datafra['ds'])
+    datafra = datafra.set_index('ds').asfreq(rarety)
+    datafra = datafra.reset_index()
+    datafra['y'] = datafra['y'].interpolate()
+    datafra["unique_id"] = [0 for i in range(1, len(datafra) + 1)]
+    print("s;kgfoshdisdifsdf")
     print(datafra)
+    st.session_state.df_forpred = ds_for_pred
     try:
         st.session_state.horiz = horizon
         q = int(round(len(datafra) * 0.1, 0))
@@ -640,19 +645,19 @@ if __name__ == "__main__":
             st.session_state.date_not_n = True
             ds_for_pred['ds'] = [i for i in range(1, len(ds_for_pred)+1)]
 
-        if st.session_state.date_not_n:
-            start_date = pd.to_datetime('2024-01-01')
-            ds_for_pred['ds'] = start_date + pd.to_timedelta(ds_for_pred['ds'] - 1, rarety)
+        # if st.session_state.date_not_n:
+        #     start_date = pd.to_datetime('2024-01-01')
+        #     ds_for_pred['ds'] = start_date + pd.to_timedelta(ds_for_pred['ds'] - 1, rarety)
 
-        ds_for_pred['ds'] = pd.to_datetime(ds_for_pred['ds'])
-        ds_for_pred = ds_for_pred.set_index('ds').asfreq(rarety)
-        ds_for_pred = ds_for_pred.reset_index()
-        ds_for_pred['y'] = ds_for_pred['y'].interpolate()
-        ds_for_pred["unique_id"] = [0 for i in range(1, len(ds_for_pred) + 1)]
-        print("s;kgfoshdisdifsdf")
+        # ds_for_pred['ds'] = pd.to_datetime(ds_for_pred['ds'])
+        # ds_for_pred = ds_for_pred.set_index('ds').asfreq(rarety)
+        # ds_for_pred = ds_for_pred.reset_index()
+        # ds_for_pred['y'] = ds_for_pred['y'].interpolate()
+        # ds_for_pred["unique_id"] = [0 for i in range(1, len(ds_for_pred) + 1)]
+        # print("s;kgfoshdisdifsdf")
+        # print(ds_for_pred)
         print(ds_for_pred)
-        print(ds_for_pred)
-        st.session_state.df_forpred = ds_for_pred
+        # st.session_state.df_forpred = ds_for_pred
         with st.container():
             st.title("🧪 Обрання та налашутвання моделі прогнозування")
 
