@@ -363,6 +363,9 @@ def submit_data_KAN(datafra, iter, horizon, rarety, inp):
         start_date = pd.to_datetime('2024-01-01')
         datafra['ds'] = start_date + pd.to_timedelta(datafra['ds'] - 1, rarety)
 
+    datafra['ds'] = pd.to_datetime(datafra['ds'])
+    datafra = datafra.set_index('ds').asfreq(rarety)
+    datafra = datafra.reset_index()
 
     print("s;kgfoshdisdifsdf")
     print(datafra)
@@ -581,9 +584,9 @@ if __name__ == "__main__":
             st.session_state.date_not_n = True
             ds_for_pred['ds'] = [i for i in range(1, len(ds_for_pred)+1)]
 
-        ds_for_pred["unique_id"] = [0 for i in range(1, len(ds_for_pred)+1)]
-        ds_for_pred = ds_for_pred.set_index('ds').asfreq("D")    
-        ds_for_pred = ds_for_pred.reset_index()
+        # ds_for_pred["unique_id"] = [0 for i in range(1, len(ds_for_pred)+1)]
+        # ds_for_pred = ds_for_pred.set_index('ds').asfreq("D")    
+        # ds_for_pred = ds_for_pred.reset_index()
         print(ds_for_pred)
         st.session_state.df_forpred = ds_for_pred
         with st.container():
