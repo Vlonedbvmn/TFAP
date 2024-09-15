@@ -108,8 +108,6 @@ def submit_data(dataframe, date_col, target_col, name):
 
 # Main function
 if __name__ == "__main__":
-
-    st.write(st.session_state)
     
     with st.container():
         st.title("Оберіть з якими даними Ви бажаєте працювати")
