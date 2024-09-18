@@ -5,6 +5,7 @@ from neuralforecast import NeuralForecast
 import plotly.figure_factory as ff
 import plotly.express as px
 from sklearn.metrics import mean_squared_error
+import plotly.graph_objects as go
 
 st.set_page_config(
     page_title="Модель",
@@ -417,7 +418,26 @@ def submit_data_KAN(datafra, iter, horizon, rarety, inp):
         dpred["pred"] = forecasts["KAN"].values.tolist()
         dpred["unique_id"] = [i for i in range(1, len(dpred) + 1)]
         # Create distplot with custom bin_size
-        st.session_state.fig = px.line(dpred, x='unique_id', y=['real', 'pred'], labels={'value': 'Y values', 'x': 'X values'})
+        st.session_state.fig = go.Figure()
+    
+                # Plot the data except the last seven days
+        st.session_state.fig.add_trace(go.Scatter(
+            x=dpred["unique_id"],
+            y=dpred["real"],
+            mode='lines',
+            name='Дані',
+            line=dict(color='blue')
+        ))    
+    
+                # Plot the last seven days in a different color
+        st.session_state.fig.add_trace(go.Scatter(
+            x=dpred["unique_id"],
+            y=dpred["pred"],
+            mode='lines',
+            name='Прогноз',
+            line=dict(color='green')
+        ))
+        # st.session_state.fig = px.line(dpred, x='unique_id', y=['real', 'pred'], labels={'value': 'Y values', 'x': 'X values'})
         print(dpred)
     except Exception as ex:
         print(ex)
