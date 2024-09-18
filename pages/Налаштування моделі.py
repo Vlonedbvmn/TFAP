@@ -576,7 +576,7 @@ def submit_data_TN(datafra, iter, horizon, rarety, inp):
         dpred["pred"] = forecasts["TimesNet"].values.tolist()
         dpred["unique_id"] = [i for i in range(1, len(dpred) + 1)]
         # Create distplot with custom bin_size
-         st.session_state.fig = go.Figure()
+        st.session_state.fig = go.Figure()
     
                 # Plot the data except the last seven days
         st.session_state.fig.add_trace(go.Scatter(
@@ -647,7 +647,7 @@ def submit_data_TM(datafra, iter, horizon, rarety, inp):
         dpred["pred"] = forecasts["TimeMixer"].values.tolist()
         dpred["unique_id"] = [i for i in range(1, len(dpred) + 1)]
         # Create distplot with custom bin_size
-         st.session_state.fig = go.Figure()
+        st.session_state.fig = go.Figure()
     
                 # Plot the data except the last seven days
         st.session_state.fig.add_trace(go.Scatter(
@@ -717,7 +717,7 @@ def submit_data_PTST(datafra, iter, horizon, rarety, inp):
         dpred["pred"] = forecasts["PatchTST"].values.tolist()
         dpred["unique_id"] = [i for i in range(1, len(dpred) + 1)]
         # Create distplot with custom bin_size
-         st.session_state.fig = go.Figure()
+        st.session_state.fig = go.Figure()
     
                 # Plot the data except the last seven days
         st.session_state.fig.add_trace(go.Scatter(
@@ -787,7 +787,7 @@ def submit_data_NBx(datafra, iter, horizon, rarety, inp):
         dpred["pred"] = forecasts["NBEATSx"].values.tolist()
         dpred["unique_id"] = [i for i in range(1, len(dpred) + 1)]
         # Create distplot with custom bin_size
-         st.session_state.fig = go.Figure()
+        st.session_state.fig = go.Figure()
     
                 # Plot the data except the last seven days
         st.session_state.fig.add_trace(go.Scatter(
