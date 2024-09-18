@@ -794,6 +794,11 @@ if __name__ == "__main__":
         if st.session_state.fig is not None:
             if st.session_state.inst_name != "Авто-вибір":
                 st.markdown(f"## Середньоквадратичне відхилення обраної моделі ({st.session_state.inst_name}): {round(st.session_state.mse, 3)}")
+                
+                st.session_state.fig.update_layout(
+                    xaxis_title='',
+                    yaxis_title='Значення'
+                )
                 st.plotly_chart(st.session_state.fig, use_container_width=True)
             else:
                 st.markdown(
