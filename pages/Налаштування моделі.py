@@ -422,7 +422,7 @@ def submit_data_KAN(datafra, iter, horizon, rarety, inp):
     
                 # Plot the data except the last seven days
         st.session_state.fig.add_trace(go.Scatter(
-            x=dpred["unique_id"],
+            x=dpred["ds"],
             y=dpred["real"],
             mode='lines',
             name='Дані',
@@ -431,7 +431,7 @@ def submit_data_KAN(datafra, iter, horizon, rarety, inp):
     
                 # Plot the last seven days in a different color
         st.session_state.fig.add_trace(go.Scatter(
-            x=dpred["unique_id"],
+            x=dpred["ds"],
             y=dpred["pred"],
             mode='lines',
             name='Прогноз',
