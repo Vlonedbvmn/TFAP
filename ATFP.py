@@ -12,7 +12,7 @@ os.environ['NIXTLA_ID_AS_COL'] = '1'
 
 
 st.set_page_config(
-    page_title="TFAP",
+    page_title="ATFP",
     layout="wide",
     initial_sidebar_state="auto"
 )
@@ -42,7 +42,7 @@ def display_df():
 
 if __name__ == "__main__":
 
-    st.title("TFAP - Timeseries Forecasting AI Platform")
+    st.title("ATFP - AI Timeseries Forecasting Platform")
 
     st.subheader(
         "Вітаю, це сторінка проєкту, який є програмним застосунком для дослідників у сфері прогнозування часових рядів використовуючи методи машинного навчання. Для початку роботи натисніть розділ Дані, щоб програма отримала дані з якими ви хочете працювати та отримувати прогнози.")
