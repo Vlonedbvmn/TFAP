@@ -51,7 +51,6 @@ if __name__ == "__main__":
     st.subheader(" ")
     st.divider()
     st.subheader("Відео інструкція користування застосунком")
-    st.subheader(" ")
     st.video(video_bytes)
     
 
