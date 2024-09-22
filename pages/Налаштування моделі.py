@@ -105,6 +105,7 @@ def submit_data_auto(datafra, iter, horizon, rarety):
         datafra['ds'] = start_date + pd.to_timedelta(datafra['ds'] - 1, rarety)
 
     datafra['ds'] = pd.to_datetime(datafra['ds'])
+    datafra = datafra.drop_duplicates(subset=['ds'])
     datafra = datafra.set_index('ds').asfreq(rarety)
     datafra = datafra.reset_index()
     datafra['y'] = datafra['y'].interpolate()
@@ -464,6 +465,7 @@ def submit_data_KAN(datafra, iter, horizon, rarety, inp):
         datafra['ds'] = start_date + pd.to_timedelta(datafra['ds'] - 1, rarety)
 
     datafra['ds'] = pd.to_datetime(datafra['ds'])
+    datafra = datafra.drop_duplicates(subset=['ds'])
     datafra = datafra.set_index('ds').asfreq(rarety)
     datafra = datafra.reset_index()
     datafra['y'] = datafra['y'].interpolate()
@@ -536,6 +538,7 @@ def submit_data_TN(datafra, iter, horizon, rarety, inp):
         datafra['ds'] = start_date + pd.to_timedelta(datafra['ds'] - 1, rarety)
 
     datafra['ds'] = pd.to_datetime(datafra['ds'])
+    datafra = datafra.drop_duplicates(subset=['ds'])
     datafra = datafra.set_index('ds').asfreq(rarety)
     datafra = datafra.reset_index()
     datafra['y'] = datafra['y'].interpolate()
@@ -606,6 +609,7 @@ def submit_data_TM(datafra, iter, horizon, rarety, inp):
         datafra['ds'] = start_date + pd.to_timedelta(datafra['ds'] - 1, rarety)
 
     datafra['ds'] = pd.to_datetime(datafra['ds'])
+    datafra = datafra.drop_duplicates(subset=['ds'])
     datafra = datafra.set_index('ds').asfreq(rarety)
     datafra = datafra.reset_index()
     datafra['y'] = datafra['y'].interpolate()
@@ -677,6 +681,7 @@ def submit_data_PTST(datafra, iter, horizon, rarety, inp):
         datafra['ds'] = start_date + pd.to_timedelta(datafra['ds'] - 1, rarety)
 
     datafra['ds'] = pd.to_datetime(datafra['ds'])
+    datafra = datafra.drop_duplicates(subset=['ds'])
     datafra = datafra.set_index('ds').asfreq(rarety)
     datafra = datafra.reset_index()
     datafra['y'] = datafra['y'].interpolate()
@@ -747,6 +752,7 @@ def submit_data_NBx(datafra, iter, horizon, rarety, inp):
         datafra['ds'] = start_date + pd.to_timedelta(datafra['ds'] - 1, rarety)
 
     datafra['ds'] = pd.to_datetime(datafra['ds'])
+    datafra = datafra.drop_duplicates(subset=['ds'])
     datafra = datafra.set_index('ds').asfreq(rarety)
     datafra = datafra.reset_index()
     datafra['y'] = datafra['y'].interpolate()
