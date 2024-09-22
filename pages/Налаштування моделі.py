@@ -459,6 +459,7 @@ def submit_data_auto(datafra, iter, horizon, rarety):
 @st.cache_data(show_spinner="Робимо передбачення...")
 def submit_data_KAN(datafra, iter, horizon, rarety, inp):
     if st.session_state.date_not_n:
+        print("no date")
         start_date = pd.to_datetime('2024-01-01')
         datafra['ds'] = start_date + pd.to_timedelta(datafra['ds'] - 1, rarety)
 
