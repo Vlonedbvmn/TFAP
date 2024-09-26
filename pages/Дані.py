@@ -141,7 +141,7 @@ if __name__ == "__main__":
         if t1:
             dataframe = pd.read_csv("sales.csv")
             st.markdown(
-                "### Тестовий набір даних 1 - це штучно-згенерозаний датасет, що представляє собою що-денну зміну акцій умовної компанії.")
+                "### Тестовий набір даних 1 - це штучно згенерозаний датасет, що представляє собою щоденну зміну акцій умовної компанії.")
             st.markdown("[Посилання на датасет](https://www.kaggle.com/datasets/sudipmanchare/simulated-sales-data-with-timeseries-features)")
             st.write(dataframe)
             st.button(label="Підтвердити", key="submit1", on_click=submit_data, args=(dataframe, "date", "target", "Тестовий набір даних 1"))
@@ -150,7 +150,8 @@ if __name__ == "__main__":
         if t2:
             dataframe = pd.read_csv("Weather_dataset.csv")
             st.markdown(
-                "### Тест 2 - це показовий датасет, що являє собою часовий ряд по-годинної зміни температури в Німеччині.")
+                "### Тест набір даних 2 - це  датасет, що являє собою часовий ряд щогодинної зміни середньої температури в Німеччині.")
+            st.markdown("[Посилання на датасет](https://www.kaggle.com/datasets/parthdande/timeseries-weather-dataset)")
             st.write(dataframe)
             st.button(label="Підтвердити", key="submit2", on_click=submit_data, args=(dataframe, "date", "target", "Тестовий набір даних 2"))
 
@@ -158,16 +159,17 @@ if __name__ == "__main__":
         if t3:
             dataframe = pd.read_csv("electricityConsumptionAndProductioction.csv")
             st.markdown(
-                "### Тест 3 - це показовий датасет, що являє собою часовий ряд по-годинної зміни кількості попотребування електроенергії в Румунії.")
+                "### Тестовий набір даних 3 - це датасет, що являє собою часовий ряд щогодинної зміни обсягу спожитої електроенергії в Румунії.")
+            st.markdown("[Посилання на датасет](https://www.kaggle.com/datasets/srinuti/residential-power-usage-3years-data-timeseries)")
             st.write(dataframe)
             st.button(label="Підтвердити", key="submit3", on_click=submit_data, args=(dataframe, "date", "target", "Тестовий набір даних 3"))
 
     # If own data button is clicked, allow file upload
     if st.session_state.clicked2:
         st.markdown("### Ви обрали свої дані. Наразі основні вимоги до даних це:")
-        st.markdown("### • Завжди повинні бути 2 колонки: час та значення, які будуть прогнозуватися")
-        st.markdown("### • Бажано офрмити колонки з часом під формат timestamp, date, або datetime")
-        st.markdown("### • Бажано, щоб було не було пропусків між записами значень, бо пропуски будуть заміщуватися, а отже якість прогнозування може падати")
+        st.markdown("### • Завжди повинні бути 2 колонки: час та значення показника, для якого здійснюється прогнозування")
+        st.markdown("### • Бажано оформити колонки з часом під формат timestamp, date, або datetime")
+        st.markdown("### • Бажано, щоб не було пропусків між записами значень, бо пропуски будуть заміщуватися, а отже якість прогнозування може погіршитися")
         st.markdown("###  ")
         uploaded_file = st.file_uploader("Оберіть файл (Підтриуються формати .csv та .xlsx)", type=["csv", "xlsx"])
         if uploaded_file is not None:
