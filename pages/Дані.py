@@ -143,7 +143,7 @@ if __name__ == "__main__":
             st.markdown(
                 "### Тестовий набір даних 1 - це штучно-згенерозаний датасет, що представляє собою що-денну зміну акцій умовної компанії.")
             st.markdown(
-                "### <a href='https://www.kaggle.com/datasets/sudipmanchare/simulated-sales-data-with-timeseries-features'>Посилання на датасет</a>)
+                "### <a href='https://www.kaggle.com/datasets/sudipmanchare/simulated-sales-data-with-timeseries-features'>Посилання на датасет</a>")
             st.write(dataframe)
             st.button(label="Підтвердити", key="submit1", on_click=submit_data, args=(dataframe, "date", "target", "Тестовий набір даних 1"))
 
